@@ -77,13 +77,14 @@ chmod +x ./flash.sh && ./flash.sh
 
 If asked for a port: Windows Device Manager → Ports; Mac `/dev/cu.usbserial-*`; Linux `/dev/ttyUSB0` or `/dev/ttyACM0`.
 
-## 4. Plug into Switch
+## 4. Host commands (Liminal) + Switch
 
 ![USB port to Switch dock](docs/switch-wiring.jpg)
 
-Plug **USB → Switch** (not COM).
+- Keep **COM → host** (Orange Pi / PC) for press commands — see [docs/host-protocol.md](docs/host-protocol.md).
+- Plug **USB → Switch** (dock). Controllers → Change Grip/Order; enable Pro Controller Wired Communication.
 
-Controllers → Change Grip/Order. Face buttons / left stick should move (demo).
+Liminal discovers the COM port, completes the handshake, and sends button packets. Without a host, the controller stays neutral (no demo loop).
 
 ## 5. No Switch yet? PC check
 
